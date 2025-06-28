@@ -227,8 +227,8 @@
 <body>
     <div class="calculator-container">
         <div class="header">
-            <h1>ðŸ¤– Calculadora de ROI de IA</h1>
-            <p>Calcule o retorno esperado do investimento em InteligÃªncia Artificial para sua empresa</p>
+            <h1> Calculadora de ROI de IA</h1>
+            <p>Calcule o retorno esperado do investimento em Inteligência Artificial para sua empresa</p>
         </div>
         
         <div class="calculator-body">
@@ -240,10 +240,10 @@
                         <option value="financeiro">Financeiro</option>
                         <option value="varejo">Varejo</option>
                         <option value="manufatura">Manufatura</option>
-                        <option value="saude">SaÃºde</option>
-                        <option value="agronegocio">AgronegÃ³cio</option>
-                        <option value="educacao">EducaÃ§Ã£o</option>
-                        <option value="logistica">LogÃ­stica</option>
+                        <option value="saude">Saúde</option>
+                        <option value="agronegocio">Agronegócio</option>
+                        <option value="educacao">Educacão</option>
+                        <option value="logistica">Logí­stica</option>
                         <option value="tecnologia">Tecnologia</option>
                         <option value="outros">Outros</option>
                     </select>
@@ -253,9 +253,9 @@
                     <label for="porte">Porte da Empresa:</label>
                     <select id="porte" required>
                         <option value="">Selecione o porte</option>
-                        <option value="pequena">Pequena (atÃ© 50 funcionÃ¡rios)</option>
-                        <option value="media">MÃ©dia (51-500 funcionÃ¡rios)</option>
-                        <option value="grande">Grande (500+ funcionÃ¡rios)</option>
+                        <option value="pequena">Pequena (até 50 funcionários)</option>
+                        <option value="media">Média (51-500 funcionários)</option>
+                        <option value="grande">Grande (500+ funcionários)</option>
                     </select>
                 </div>
 
@@ -273,42 +273,42 @@
                         </div>
                         <div class="checkbox-item" onclick="toggleCheckbox(this)">
                             <input type="checkbox" name="casos" value="analise_dados">
-                            <span>AnÃ¡lise de Dados</span>
+                            <span>Análise de Dados</span>
                         </div>
                         <div class="checkbox-item" onclick="toggleCheckbox(this)">
                             <input type="checkbox" name="casos" value="automacao">
-                            <span>AutomaÃ§Ã£o de Processos</span>
+                            <span>Automação de Processos</span>
                         </div>
                         <div class="checkbox-item" onclick="toggleCheckbox(this)">
                             <input type="checkbox" name="casos" value="manutencao_preditiva">
-                            <span>ManutenÃ§Ã£o Preditiva</span>
+                            <span>Manutenção£o Preditiva</span>
                         </div>
                         <div class="checkbox-item" onclick="toggleCheckbox(this)">
                             <input type="checkbox" name="casos" value="personalizacao">
-                            <span>PersonalizaÃ§Ã£o</span>
+                            <span>Personalização</span>
                         </div>
                         <div class="checkbox-item" onclick="toggleCheckbox(this)">
                             <input type="checkbox" name="casos" value="deteccao_fraude">
-                            <span>DetecÃ§Ã£o de Fraudes</span>
+                            <span>Detecção de Fraudes</span>
                         </div>
                         <div class="checkbox-item" onclick="toggleCheckbox(this)">
                             <input type="checkbox" name="casos" value="otimizacao_precos">
-                            <span>OtimizaÃ§Ã£o de PreÃ§os</span>
+                            <span>Otimização de Preços</span>
                         </div>
                         <div class="checkbox-item" onclick="toggleCheckbox(this)">
                             <input type="checkbox" name="casos" value="gestao_estoque">
-                            <span>GestÃ£o de Estoque</span>
+                            <span>Gestão de Estoque</span>
                         </div>
                     </div>
                 </div>
 
                 <button type="submit" class="calculate-btn">
-                    ðŸ“Š Calcular ROI de IA
+                    Calcular ROI de IA
                 </button>
             </form>
 
             <div id="results" class="results">
-                <h3>ðŸ“ˆ Resultados da AnÃ¡lise de ROI</h3>
+                <h3>Resultados da Análise de ROI</h3>
                 <div id="resultDetails"></div>
                 <div id="roiHighlight" class="roi-highlight">
                     <h3>ROI Projetado em 3 Anos</h3>
@@ -316,9 +316,9 @@
                     <p>Retorno esperado sobre o investimento</p>
                 </div>
                 <div class="disclaimer">
-                    <strong>âš ï¸ Aviso:</strong> Esta calculadora fornece estimativas baseadas em dados de mercado e casos de sucesso brasileiros. 
-                    Os resultados reais podem variar dependendo da implementaÃ§Ã£o, qualidade dos dados e fatores especÃ­ficos da empresa. 
-                    Recomendamos consultar especialistas para anÃ¡lises mais detalhadas.
+                    <strong> Aviso:</strong> Esta calculadora fornece estimativas baseadas em dados de mercado e casos de sucesso brasileiros. 
+                    Os resultados reais podem variar dependendo da implementação, qualidade dos dados e fatores especÃíficos da empresa. 
+                    Recomendamos consultar especialistas para análises mais detalhadas.
                 </div>
             </div>
         </div>
@@ -338,14 +338,13 @@
             outros: { base: 220, multiplicador: 1.0 }
         };
 
-        // Multiplicadores por porte
+    
         const porteMultiplicador = {
             pequena: 0.8,
             media: 1.0,
             grande: 1.2
         };
 
-        // Valores por caso de uso
         const casosUsoValor = {
             chatbot: 25,
             analise_dados: 35,
@@ -374,28 +373,24 @@
                 return;
             }
 
-            // CÃ¡lculo base do ROI
+           
             const setorData = roiData[setor];
             let roiBase = setorData.base;
 
-            // Aplicar multiplicador do porte
             roiBase *= porteMultiplicador[porte];
 
-            // Adicionar valor dos casos de uso
             let bonusCasosUso = 0;
             casosUso.forEach(caso => {
                 bonusCasosUso += casosUsoValor[caso];
             });
 
-            // ROI final
             const roiFinal = Math.round(roiBase + bonusCasosUso);
 
-            // CÃ¡lculos financeiros
+          
             const retornoTotal = Math.round(investimento * (roiFinal / 100));
             const economiaAnual = Math.round(retornoTotal / 3);
             const payback = Math.round((investimento / economiaAnual) * 12); // em meses
 
-            // Exibir resultados
             exibirResultados(roiFinal, investimento, retornoTotal, economiaAnual, payback, casosUso.length);
         }
 
@@ -433,13 +428,12 @@
             resultsDiv.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Event listener para o formulÃ¡rio
+      
         document.getElementById('roiForm').addEventListener('submit', function(e) {
             e.preventDefault();
             calcularROI();
         });
 
-        // FormataÃ§Ã£o automÃ¡tica do campo de investimento
         document.getElementById('investimento').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value) {
